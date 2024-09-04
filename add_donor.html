@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Donor</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS file -->
+    <style>
+        body {
+            background-image: url('10.webp'); /* Replace 'background_image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 300px;
+        }
+        .input-group {
+            margin-bottom: 10px; /* Adjust the margin-bottom value to your preference */
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #343a40; /* Dark gray navbar background color */
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            position: relative; /* Ensure positioning context for absolute positioning */
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+            position: relative; /* Set position for submenu positioning */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: gray; /* Darker gray on hover */
+            
+        }
+
+        /* Submenu */
+        nav ul ul {
+            display: none;
+            position: absolute;
+            top: 100%; /* Position sub-menu below parent menu item */
+            left: 0;
+            background-color: lightslategray; /* Dark gray for submenu */
+            border-radius: 0 0 5px 5px;
+            width: 150px; /* Adjust submenu width */
+            z-index: 1; /* Ensure submenu displays above other elements */
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul ul li {
+            display: block;
+        }
+
+        nav ul ul li a {
+            display: block;
+            padding: 10px 20px;
+            /* color: black; Text color for submenu items */
+            text-decoration: none;
+        }
+
+        nav ul ul li a:hover {
+            background-color: lightgray; /* Darker gray on submenu hover */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="search_donor.html">Search Donors</a></li>
+            <li><a href="add_donor.html">Add Donor</a></li>
+            <li><a href="request_blood.html">Request for Blood</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <!-- <li>
+                <a href="#">My Account</a>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="change_password.html">Change Password</a></li>
+                </ul>
+            </li> -->
+            <li><a href="admin_login.html">Admin Login</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Add Donor</h2>
+        <form action="add_donor.php" method="post">
+            <div class="input-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="input-group">
+                <label for="bloodgroup">Blood Group:</label>
+                <select id="bloodgroup" name="bloodgroup" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="city">City:</label>
+                <!-- <input type="text" id="city" name="city" required> -->
+
+                <select id="city" name="city" required>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Amreli">Amreli</option>
+                    <option value="Anand">Anand</option>
+                    <option value="Aravalli">Aravalli</option>
+                    <option value="BanasKantha">BanasKantha</option>
+                    <option value="Bharuch">Bharuch</option>
+                    <option value="Bhavnagar">Bhavnagar</option>
+                    <option value="Botad">Botad</option>
+                    <option value="Chhotaudepur">Chhotaudepur</option>
+                    <option value="Dahod">Dahod</option>
+                    <option value="Dang">Dang</option>
+                    <option value="Devbhoomi Dwarka">Devbhoomi Dwarka</option>
+                    <option value="Gandhinagar">Gandhinagar</option>
+                    <option value="Gir Somnath">Gir Somnath</option>
+                    <option value="Jamnagar">Jamnagar</option>
+                    <option value="Junagadh">Junagadh</option>
+                    <option value="Kachchh">Kachchh</option>
+                    <option value="Kheda">Kheda</option>
+                    <option value="Mahesana">Mahesana</option>
+                    <option value="Mahisagar">Mahisagar</option>
+                    <option value="Morbi">Morbi</option>
+                    <option value="Narmada">Narmada</option>
+                    <option value="Navsari">Navsari</option>
+                    <option value="Panch Mahals">Panch Mahals</option>
+                    <option value="Paltan">Paltan</option>
+                    <option value="Porbandar">Porbandar</option>
+                    <option value="Rajkot">Rajkot</option>
+                    <option value="Sabar Kantha">Sabar Kantha</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Surendranagar">Surendranagar</option>
+                    <option value="Tapi">Tapi</option>
+                    <option value="Vadodara">Vadodara</option>
+                    <option value="Valsad">Valsad</option>
+                </select>
+
+            </div>
+            <div class="input-group">
+                <label for="phoneno">Phone Number:</label>
+                <input type="tel" id="phoneno" name="phoneno" pattern="[0-9]{10}" required>
+            </div>
+            <button type="submit" name="submit">Add Donor</button>
+        </form>
+    </div>
+</body>
+</html>

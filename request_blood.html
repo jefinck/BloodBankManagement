@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Blood - Blood Bank Management System</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-image: url('8.jpg'); /* Replace 'background_image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Use full viewport height */
+        }
+
+        .dashboard-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            /* font-weight: bold; */
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* button[type="submit"]:hover {
+            background-color: #495057;  Darker gray on hover 
+        } */
+
+        nav {
+    background-color: #343a40; /* Dark gray navbar background color */
+    padding: 10px 0;
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed position to stay at the top */
+    top: 0; /* Align to the top of the viewport */
+    z-index: 100; /* Ensure the nav is above other elements */
+    text-align: center; /* Center align nav links */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Display as block to center */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #495057; /* Darker gray on hover */
+}
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="search_donor.html">Search Donors</a></li>
+            <li><a href="add_donor.html">Add Donor</a></li>
+            <li><a href="request_blood.html">Request for Blood</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <!-- <li>
+                <a href="#">My Account</a>
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="change_password.html">Change Password</a></li>
+                </ul>
+            </li> -->
+            <li><a href="admin_login.html">Admin Login</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </nav>
+    <form id="requestBloodForm" class="dashboard-container" action="process_request.php" method="POST">
+        <h2>Request Blood</h2>
+        <div class="form-group">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName" name="patientName" required>
+        </div>
+        <div class="form-group">
+            <label for="bloodGroup">Blood Group:</label>
+            <select id="bloodGroup" name="bloodGroup" required>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="unitsNeeded">Units Needed:</label>
+            <input type="number" id="unitsNeeded" name="unitsNeeded" min="1" required>
+        </div>
+        <button type="submit" name="submit">Submit Request</button>
+    </form>
+</body>
+</html>
